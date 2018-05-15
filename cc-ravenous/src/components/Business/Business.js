@@ -1,26 +1,14 @@
 import React from 'react';
 import './Business.css';
 
-const business = {
-    imageSrc: 'https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg',
-    name: 'MarginOtto Pizzeria',
-    address: '1010 Paddington Way',
-    city: 'Flavortown',
-    state: 'NY',
-    zipCode: '10101',
-    category: 'Italian',
-    rating: 4.5,
-    reviewCount: 90
-};
-
 class Business extends React.Component {
     render() {
         return (
-            <div className="Business">
+            <div className="Business" >
                 <div className="image-container">
-                    <img src={this.props.business.imageSrc} alt='' />
+                    <img src={this.props.business.imageSrc} alt={this.props.business.name} />
                 </div>
-                <h2>{this.props.name}</h2>
+                <h2> <a href={this.props.business.url} target="_blank"> {this.props.business.name} </a> </h2>
                 <div className="Business-information">
                     <div className="Business-address">
                         <p>{this.props.business.address}</p>
